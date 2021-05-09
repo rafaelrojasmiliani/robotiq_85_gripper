@@ -134,6 +134,7 @@ class Robotiq85Driver:
     def _update_right_gripper_cmd(self, cmd):
 
         if (True == cmd.emergency_release):
+
             self._gripper.activate_emergency_release(
                 dev=1, open_gripper=cmd.emergency_release_dir)
             return
