@@ -30,7 +30,7 @@ class Robotiq85Gripper:
         try:
             self.ser.write(self._gripper[dev].act_cmd_bytes)
             rsp = self.ser.read(8)
-            rsp = [ord(x) for x in rsp]
+            rsp = [x for x in rsp]
             if (len(rsp) != 8):
                 return False
             return verify_modbus_rtu_crc(rsp)
